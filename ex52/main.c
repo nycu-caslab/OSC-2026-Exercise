@@ -6,7 +6,7 @@ extern void video_init();
 extern void video_bmp_display(unsigned int* bmp_image, int width, int height);
 
 #define TIME_FREQ 10000000
-void sleep(int msec) {
+int usleep(unsigned int usec) {
     // TODO: Implement this function
 }
 
@@ -16,7 +16,7 @@ void display_video() {
         for (int f = 0; f < FRAME_COUNT; f++) {
             unsigned int* frame = (frames + (f * FRAME_WIDTH * FRAME_HEIGHT));
             video_bmp_display(frame, FRAME_WIDTH, FRAME_HEIGHT);
-            sleep(100);
+            usleep(50000);
         }
     }
 }
