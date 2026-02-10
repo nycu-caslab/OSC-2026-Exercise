@@ -92,7 +92,7 @@ int exec(const char* filename) {
             void* program = alloc_page();  // The test program fits in one page
             memcpy(program, p + headsize, filesize);
             map_pages(0x0, filesize, virt_to_phys(program), PAGE_RX);
-            map_pages(0x4000000000, PAGE_SIZE, virt_to_phys(alloc_page()),
+            map_pages(0x3ffffff000, PAGE_SIZE, virt_to_phys(alloc_page()),
                       PAGE_RW);
             asm volatile("csrw sepc, %0" : : "r"(0x0));
             asm volatile("csrw sscratch, sp");
