@@ -35,12 +35,13 @@ struct fdt_header {
     uint32_t size_dt_struct;
 };
 ```
->[!Tip] You may use these informations:
-    - `magic`: 0xd00dfeed
-    - `off_dt_struct`
-    - `off_dt_strings`
+**[ Hint ]** You may use these informations:
+- `magic`: 0xd00dfeed
+- `off_dt_struct`
+- `off_dt_strings`
 
 ### Structure Block
+**[ Note ]** Padding: align up to 4 bytes
 
 | Token          | ID  | Description                   |
 | -------------- | --- | ----------------------------- |
@@ -49,7 +50,6 @@ struct fdt_header {
 | FDT_PROP       | 0x3 | Prop_len + Prop_name offset in Strings Block + Padding |
 | FDT_NOP        | 0x4 | Ignored                       | 
 | FDT_END        | 0x9 | End of the devicetree         | 
->[!Note] Padding: align up to 4 bytes
 
 ## TODO
 - `fdt_path_offset`: Return the offset of a node by path.

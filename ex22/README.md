@@ -11,6 +11,7 @@
 
 ## New ASCII Format Cpio Archive
 ### Archive Structure
+**[ Note ]** Padding: align up to 4 bytes
 | Structure | 
 | ------ | 
 | Header | 
@@ -18,7 +19,6 @@
 | Padding | 
 | File Data | 
 | Padding | 
->[!Note] Padding: align up to 4 bytes
 
 ### Header
 ```c
@@ -39,10 +39,10 @@ struct cpio_t {
     char check[8];
 };
 ```
->[!Tip] You may use these informations:
-    - `magic`: String of "070701"
-    - `filesize`
-    - `namesize`
+**[ Hint ]** You may use these informations:
+- `magic`: String of "070701"
+- `filesize`
+- `namesize`
 
 ### Archive Stream
 The end of the archive is indicated by a special record with the pathname `"TRAILER!!!"`
