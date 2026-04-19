@@ -5,7 +5,7 @@
 extern int strncmp(const char* s1, const char* s2, int n);
 extern void* memcpy(void* dst, const void* src, int n);
 
-#define FB_BASE   0xfe000000
+#define FB_BASE   0x87000000
 #define FB_WIDTH  1920
 #define FB_HEIGHT 1080
 #define FB_BPP    4
